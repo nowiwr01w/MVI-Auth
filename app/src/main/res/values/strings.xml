@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Languator</string>
+
+    <string name="feed_title">Feed</string>
+    <string name="dictionary_title">Dictionary</string>
+    <string name="chat_title">Chat</string>
+    <string name="home_title">Home</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password_again">Password again</string>
+    <string name="sign_up">Sign Up</string>
+</resources>

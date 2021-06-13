@@ -1,0 +1,2 @@
+rootProject.name = "Languator"
+include ':app'
