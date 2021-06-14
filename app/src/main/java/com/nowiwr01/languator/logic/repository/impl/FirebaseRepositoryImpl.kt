@@ -11,8 +11,13 @@ class FirebaseRepositoryImpl(
     private val auth: FirebaseAuth,
 ): FirebaseRepository {
 
-    override suspend fun loginUser(email: String, password: String) {
-
+    override suspend fun loginUser(email: String, password: String) = withContext(Dispatchers.IO) {
+        try {
+            val response = auth.signInWithEmailAndPassword(email, password).await()
+            ResultRemote.success(response.user)
+        } catch (throwable: Throwable) {
+            ResultRemote.error("Хуйня, а не авторизация")
+        }
     }
 
     override suspend fun createUser(email: String, password: String) = withContext(Dispatchers.IO) {
@@ -20,7 +25,7 @@ class FirebaseRepositoryImpl(
             val response = auth.createUserWithEmailAndPassword(email, password).await()
             ResultRemote.success(response.user)
         } catch (throwable: Throwable) {
-            ResultRemote.error("Хуйня, а не авторизация")
+            ResultRemote.error("Хуйня, а не регистрация")
         }
     }
 

@@ -1,6 +1,6 @@
 package com.nowiwr01.languator.domain
 
-data class UserData(
+data class UserDataSignUp(
     val email: String,
     val userName: String,
     val password: String,
@@ -12,6 +12,6 @@ data class UserData(
             userName: String,
             password: String,
             passwordRepeated: String
-        ) = UserData(email, userName, password, passwordRepeated)
+        ) = UserDataSignUp(email, userName, password, passwordRepeated)
     }
 }

@@ -16,24 +16,24 @@ val moduleSignUp = module {
 
     scope(named<SignUpFragment>()) {
         scoped { params ->
-            EmailProvider(params[0])
+            SignUpEmailProvider(params[0])
         }
         scoped { params ->
-            UsernameProvider(params[0])
+            SignUpUsernameProvider(params[0])
         }
         scoped { params ->
-            PasswordProvider(params[0])
+            SignUpPasswordProvider(params[0])
         }
         scoped { params ->
-            PasswordRepeatProvider(params[0])
+            SignUpPasswordRepeatProvider(params[0])
         }
         scoped { params ->
             val fragment: SignUpFragment = params[0]
             SignUpController(
-                get<EmailProvider> { parametersOf(fragment) },
-                get<UsernameProvider> { parametersOf(fragment) },
-                get<PasswordProvider> { parametersOf(fragment) },
-                get<PasswordRepeatProvider> { parametersOf(fragment) }
+                get<SignUpEmailProvider> { parametersOf(fragment) },
+                get<SignUpUsernameProvider> { parametersOf(fragment) },
+                get<SignUpPasswordProvider> { parametersOf(fragment) },
+                get<SignUpPasswordRepeatProvider> { parametersOf(fragment) }
             )
         }
     }

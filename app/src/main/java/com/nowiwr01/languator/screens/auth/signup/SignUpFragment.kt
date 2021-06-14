@@ -5,7 +5,7 @@ import androidx.lifecycle.lifecycleScope
 import com.nowiwr01.languator.R
 import com.nowiwr01.languator.base.BaseFragment
 import com.nowiwr01.languator.databinding.FragmentSignUpBinding
-import com.nowiwr01.languator.domain.UserData
+import com.nowiwr01.languator.domain.UserDataSignUp
 import com.nowiwr01.languator.extensions.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 import kotlinx.coroutines.flow.collect
@@ -23,9 +23,7 @@ class SignUpFragment: BaseFragment<FragmentSignUpBinding>() {
     }
 
     override fun setViews() {
-        controller.getTextFields().forEach {
-            controller.setTextChangedCallback(it)
-        }
+        controller.setTextChangedCallback()
     }
 
     override fun setListeners() {
@@ -35,7 +33,7 @@ class SignUpFragment: BaseFragment<FragmentSignUpBinding>() {
         }
     }
 
-    private fun signUpIfValid(userData: UserData) {
+    private fun signUpIfValid(userData: UserDataSignUp) {
         controller.setDefaultAll()
         val error = viewModel.isUserInputValid(userData)
         if (error == null) {

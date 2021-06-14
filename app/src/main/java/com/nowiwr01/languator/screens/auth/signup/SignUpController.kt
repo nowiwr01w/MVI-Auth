@@ -2,7 +2,7 @@ package com.nowiwr01.languator.screens.auth.signup
 
 import android.widget.EditText
 import com.nowiwr01.languator.base.ViewProvider
-import com.nowiwr01.languator.domain.UserData
+import com.nowiwr01.languator.domain.UserDataSignUp
 import com.nowiwr01.languator.extensions.doOnTextChanged
 import com.nowiwr01.languator.extensions.setDefault
 import com.nowiwr01.languator.extensions.setError
@@ -14,7 +14,7 @@ class SignUpController(
     private val passwordRepeatProvider: ViewProvider<EditText>
 ) {
 
-    fun getUserData() = UserData.createUserData(
+    fun getUserData() = UserDataSignUp.createUserData(
         emailProvider.view.text.toString(),
         usernameProvider.view.text.toString(),
         passwordProvider.view.text.toString(),
@@ -39,13 +39,11 @@ class SignUpController(
         }
     }
 
-    fun setTextChangedCallback(editText: EditText) {
-        editText.doOnTextChanged {
-            editText.setDefault()
+    fun setTextChangedCallback() = listOf(
+        emailProvider.view, usernameProvider.view, passwordProvider.view, passwordRepeatProvider.view
+    ).forEach {
+        it.doOnTextChanged {
+            it.setDefault()
         }
     }
-
-    fun getTextFields() = listOf(
-        emailProvider.view, usernameProvider.view, passwordProvider.view, passwordRepeatProvider.view
-    )
 }

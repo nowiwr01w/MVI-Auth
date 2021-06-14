@@ -3,7 +3,7 @@ package com.nowiwr01.languator.screens.auth.signup
 import com.google.firebase.auth.FirebaseUser
 import com.nowiwr01.languator.base.BaseViewModel
 import com.nowiwr01.languator.base.mapBoth
-import com.nowiwr01.languator.domain.UserData
+import com.nowiwr01.languator.domain.UserDataSignUp
 import com.nowiwr01.languator.logic.errors.SignUpTextError
 import com.nowiwr01.languator.logic.errors.SignUpError
 import com.nowiwr01.languator.logic.interactors.FirebaseInteractor
@@ -33,8 +33,8 @@ class SignUpViewModel(
         }
     }
 
-    fun isUserInputValid(userData: UserData): SignUpTextError? {
-        return userDataInteractor.isUserInputValid(userData)
+    fun isUserInputValid(userData: UserDataSignUp): SignUpTextError? {
+        return userDataInteractor.isSignUpDataValid(userData)
     }
 
     private fun signUp(email: String, password: String) {
