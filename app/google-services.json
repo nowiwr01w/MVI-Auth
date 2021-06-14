@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289489667467",
+    "project_id": "mvi-languator",
+    "storage_bucket": "mvi-languator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289489667467:android:187a1b389cd2d24008db8e",
+        "android_client_info": {
+          "package_name": "com.nowiwr01.languator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289489667467-4mvucavj241hb17vr21693h6f7oouumb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXHI93pXronUV0gFEfiBJvhDklT0Zmmes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289489667467-4mvucavj241hb17vr21693h6f7oouumb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

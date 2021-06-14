@@ -11,4 +11,6 @@
     <color name="color_primary">#1C0E42</color>
     <color name="color_primary_dark">#150A33</color>
     <color name="color_accent">#FC4C4C</color>
+
+    <color name="stackBar_color">#EEEEEE</color>
 </resources>
